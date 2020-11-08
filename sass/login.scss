@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    width: 1210px;
+    height: 50px;
+    margin: 20px auto;
+    border-bottom:3px solid #cecece ;
+    
+    >.left{
+        float: left;
+        a{
+            display: inline-block;
+            width: 160px;
+            h1{
+                display: inline-block;
+                width: 160px;
+                height: 50px;
+                background: url(../images/icon.png) 0 0 no-repeat;
+            }
+        }
+    }
+    .right{
+        float: right;
+        line-height: 50px;
+    }
+}
+
+#main{
+    width: 1210px;
+    height: 600px;
+    margin : 30px auto;
+    border: 1px solid #cecece;
+    .top{
+        width: 50%;
+        height: 60px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        .one{
+            width: 100px;
+            height: 60px;
+            .tu{
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: rgb(66, 201, 127);
+                text-align: center;
+                line-height: 24px;
+                margin: 0 auto;
+                color: beige;
+                margin-bottom: 5px;
+            }
+            p{
+               color:  rgb(66, 201, 127);
+                text-align: center;
+            }
+        }
+        .lianjie{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color:  rgb(66, 201, 127);
+            font-size: 30px;
+            
+        }
+    }
+
+    .zhuce{
+        width: 50%;
+        height: 600px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+       
+
+        >#from{
+
+
+            p{
+                width:400px;
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #cecece;
+                padding:0 10px;
+                margin-bottom: 30px;
+                position: relative;
+                color: #666666;
+                // box-sizing: border-box;
+                input{
+                    width: 300px;
+                    text-indent: 20px;
+                    border: none;
+                    height:45px;
+                    outline: none;
+                    &::placeholder{
+                        font-size: 12px;
+                        color: rgb(181, 173, 173);
+                    }
+                }
+                span{
+                    display:none ;
+                    position: absolute;
+                    top: 80%;
+                    left: 0px;
+                    i{
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: rgb(175, 105, 105);
+    
+                    }
+                }
+            }
+          >input{
+              display: block;
+            width: 100%;
+            height: 40px;
+            border: 0;
+            background: #e2231a;
+            color: #fff;
+            margin: 0 auto;
+            outline: none;
+        }  
+        }
+    }
+}
