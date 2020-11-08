@@ -1,0 +1,134 @@
+/* 
+global.css | reset.css（格式化样式）
+common.css（公共组件样式）
+layout.css（当前页面样式） */
+
+
+/* 公共样式 */
+
+body,
+ul,
+dl,
+dd,
+p,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+fieldset,
+legend,
+header,
+footer,
+nav,
+menu,
+figure,
+input,
+textarea,
+tr,
+td,
+th,
+span,
+figcaption,
+hgroup {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img,
+fieldset {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+
+.clear {
+    clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+body {
+    font-family: "微软雅黑";
+    background: rgb(244, 244, 244);
+}
+
+input,
+a {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    outline: 0;
+    -webkit-appearance: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: #fff
+}
+
+
+/*======万能Float清除浮动1======*/
+
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/*======万能Float清除浮动2======*/
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/*控制背景溢出*/
+
+.equal-height {
+    margin-bottom: -32800px;
+    padding-bottom: 32800px;
+}
+
+
+/*控制高度足够小*/
+
+
+/*======万能Float清除浮动3======*/
+
+.clear {
+    height: 0px;
+    clear: both;
+    font-size: 0px;
+    line-height: 0px;
+    zoom: 1;
+}
+
+
+/* 上面的样式重置-不能动 */
