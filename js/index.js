@@ -341,7 +341,26 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
 
 
+        // 鼠标花火小功能颜色改变
 
+        $('.server .xiaogongneng ul li').hover(function () {
+
+            $(this).children().children().eq(0).children().css({
+                display: 'none'
+            })
+            $(this).children().children().eq(1).children().css({
+                display: 'block',
+
+            })
+        }, function () {
+            $(this).children().children().eq(0).children().css({
+                display: 'block'
+            })
+            $(this).children().children().eq(1).children().css({
+                display: 'none',
+
+            })
+        })
 
 
 
