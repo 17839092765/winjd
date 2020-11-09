@@ -1,8 +1,10 @@
 $a:#e1251b;
 $b:#c81623;
+
 .ad,
 .case,
-#header,#main {
+#header,
+#main {
     width: 1190px;
     margin: 0 auto;
     // border: 1px solid #cecece;
@@ -140,6 +142,7 @@ img {
     color: #999;
     line-height: 30px;
     font-size: 12px;
+
 }
 
 .case .case-left .case-map-more {
@@ -156,6 +159,7 @@ img {
     padding: 10px;
     background: #fff;
     z-index: 1;
+
 }
 
 .case .case-left .case-map-more .case-map-more-top {
@@ -563,7 +567,7 @@ li:nth-of-type(8):hover {
 
         // border: 1px solid #cecece;
 
-        >.bottom-title{
+        >.bottom-title {
             width: 96%;
             height: 30px;
             position: absolute;
@@ -571,19 +575,23 @@ li:nth-of-type(8):hover {
             display: flex;
             justify-content: space-around;
             margin-right: 20px;
-            span:nth-of-type(1),span:nth-of-type(2){
-                a{
+
+            span:nth-of-type(1),
+            span:nth-of-type(2) {
+                a {
                     color: $a;
                 }
             }
-            span{
-                a{
-                    &:hover{
+
+            span {
+                a {
+                    &:hover {
                         color: $a;
                     }
                 }
             }
         }
+
         >.center-input {
             width: 550px;
             height: 36px;
@@ -603,21 +611,24 @@ li:nth-of-type(8):hover {
                 top: 40px;
                 display: flex;
                 justify-content: space-between;
-                span{
-                    margin: 0 3px ;
-                    a{
-                        &:hover{
+
+                span {
+                    margin: 0 3px;
+
+                    a {
+                        &:hover {
                             color: $b;
                         }
                     }
                 }
-                span:nth-of-type(1){
-                    a{
+
+                span:nth-of-type(1) {
+                    a {
                         color: $b;
                     }
                 }
-                
-                
+
+
             }
 
             >.inputt {
@@ -632,12 +643,14 @@ li:nth-of-type(8):hover {
                     float: left;
                     text-indent: 20px;
                 }
-                >ul{
+
+                >ul {
                     width: 100%;
                     background: rgb(255, 255, 255);
                     z-index: 1;
                     position: absolute;
                     top: 50px;
+
                     // :after {
                     //     content: "";
                     //     height: 0;
@@ -646,12 +659,13 @@ li:nth-of-type(8):hover {
                     //     display: block;
                     //     visibility: hidden;
                     // }
-                    li{
+                    li {
                         text-indent: 20px;
                         width: 50%;
                         height: 30px;
                     }
                 }
+
                 span {
                     position: absolute;
                     right: 60px;
@@ -731,56 +745,64 @@ li:nth-of-type(8):hover {
         }
     }
 }
-.mainwrap{
+
+.mainwrap {
     z-index: 0;
     position: relative;
     // border: 5px solid #000;
 }
-.mainbg{
-    // margin: 0 auto;
-  
-    a{
-    display: block;
-    background: url(../images/下载.webp) 50% 0px no-repeat;
-    width: 100%;
-    height: 710px;
+
+.mainbg {
     // margin: 0 auto;
 
-    position: absolute;
-    top: 0;
-    // left: 0;
-    z-index: -1;
+    a {
+        display: block;
+        background: url(../images/下载.webp) 50% 0px no-repeat;
+        width: 100%;
+        height: 710px;
+        // margin: 0 auto;
+
+        position: absolute;
+        top: 0;
+        // left: 0;
+        z-index: -1;
     }
 }
-#main{
+
+#main {
     height: 710px;
     border: 1px solid #cecece;
     z-index: 1;
     height: 480px;
     background-color: #f4f4f4;
     position: relative;
-    >.main-mean{
+
+    >.main-mean {
         padding-top: 10px;
-        .left{
+
+        .left {
             background: #fff;
             width: 190px;
-            ul{
-                li{
+
+            ul {
+                li {
                     width: 100%;
                     height: 25px;
-                    a{
+
+                    a {
                         display: block;
                         width: 100%;
                         text-indent: 20px;
+
                         // text-align: center;
-                        &:hover{
-                            background: #000;
+                        &:hover {
+                            background: #888888;
                         }
                     }
                 }
             }
 
-            .meanshow{
+            .meanshow {
                 width: 1000px;
                 height: 480px;
                 position: absolute;
@@ -795,62 +817,264 @@ li:nth-of-type(8):hover {
             }
         }
     }
-    >.lunbo{
+
+    >.lunbo {
         width: 590px;
-            height: 470px;
-            padding: 10px;
+        height: 470px;
+        padding: 10px;
         position: absolute;
         top: 0;
-            left: 192px;
+        left: 192px;
+
         .swiper-container {
             width: 590px;
             height: 470px;
             border: 1px solid #cecece;
-            --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-            --swiper-navigation-color: #443f43;/* 单独设置按钮颜色 */
-            --swiper-navigation-size: 30px;/* 设置按钮大小 */
-            .hide{
+            --swiper-theme-color: #ff6600;
+            /* 设置Swiper风格 */
+            --swiper-navigation-color: #443f43;
+            /* 单独设置按钮颜色 */
+            --swiper-navigation-size: 30px;
+
+            /* 设置按钮大小 */
+            .hide {
                 opacity: 0.3;
             }
-            .swiper-button-next,.swiper-button-prev{
-                transition:opacity 0.5s;
-              }
-        }  
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                transition: opacity 0.5s;
+            }
+        }
     }
 
 
-    >.lunbo2{
+    >.lunbo2 {
         width: 190px;
-            height: 470px;
-            padding: 10px;
+        height: 470px;
+        padding: 10px;
         position: absolute;
         top: 0;
-            left: 790px;
-            // overflow: hidden;
+        left: 790px;
+
+        // overflow: hidden;
         .swiper-container {
             width: 190px;
             height: 470px;
             border: 1px solid #cecece;
-            --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-            --swiper-navigation-color: #443f43;/* 单独设置按钮颜色 */
-            --swiper-navigation-size: 30px;/* 设置按钮大小 */
-            .hide{
+            --swiper-theme-color: #ff6600;
+            /* 设置Swiper风格 */
+            --swiper-navigation-color: #443f43;
+            /* 单独设置按钮颜色 */
+            --swiper-navigation-size: 30px;
+
+            /* 设置按钮大小 */
+            .hide {
                 opacity: 0;
             }
-            .swiper-button-next,.swiper-button-prev{
-                transition:opacity 0.5s;
-              }
-              .swiper-wrapper{
-                  >div{
-                    img{
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                transition: opacity 0.5s;
+            }
+
+            .swiper-wrapper {
+                >div {
+                    img {
                         width: 190px;
                         height: 150px;
-                        margin-bottom: 5px;;
+                        margin-bottom: 5px;
+                        ;
                         display: block;
                     }
-                  }
-              }
-              
-        }  
+                }
+            }
+
+        }
     }
+
+
+
+
+    >.right {
+        width: 190px;
+        height: 98%;
+        // border: 1px solid #cecece;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        align-items: center;
+        background: #fff;
+
+        >.server {
+            width: 100%;
+            height: 230px;
+            // border: 1px solid #000;
+            border-bottom: 1px solid #cecece;
+
+        }
+
+        >.newsdata {
+            width: 100%;
+            height: 130px;
+            // border: 1px solid #000;
+            border-bottom: 1px solid #cecece;
+
+            .newshd {
+                margin-top: 5px;
+                height: 25px;
+
+                >span {
+                    width: 100px;
+                    font-size: 16px;
+                    float: left;
+                    line-height: 16px;
+                }
+
+                >a {
+                    float: right;
+                    font-size: 12px;
+                }
+            }
+
+            >p {
+                position: relative;
+                margin-bottom: 3px;
+
+                >span {
+                    display: inline-block;
+                    font-size: 12px;
+                    height: 16px;
+                    width: 35px;
+                    line-height: 16px;
+                    text-align: center;
+                    vertical-align: 0;
+                    color: #e1251b;
+                    background-color: rgba(225, 37, 27, .08);
+                    margin-right: 6px;
+
+                }
+
+                >a {
+                    display: inline-block;
+                    max-width: 120px;
+                    _width: 160px;
+                    height: 16px;
+                    line-height: 16px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: #999;
+                    // margin-bottom: 6px;
+                    font-size: 12px;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        >.userdata {
+            width: 100%;
+            height: 100px;
+            border-bottom: 1px solid #cecece;
+            position: relative;
+
+            >.left {
+                text-align: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                float: left;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+
+            }
+
+            >.right {
+                width: 106px;
+                height: 37px;
+                float: right;
+                font-size: 12px;
+                // padding-top: 5px;
+
+                p:nth-of-type(1) {
+                    margin: 5px 0;
+                }
+
+                p:nth-of-type(2) {
+                    margin: 5px 0;
+
+                    span {
+                        margin: 5px;
+                    }
+                }
+
+
+            }
+
+            >p {
+                width: 100%;
+                height: 30px;
+                position: absolute;
+                top: 50px;
+
+                span:nth-of-type(1) {
+
+                    display: inline-block;
+                    margin: 0 5px;
+                    width: 70px;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 13px;
+                    background: #e1251b;
+                    -webkit-transition: background .3s ease, color .3s ease;
+                    transition: background .3s ease, color .3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #a75b57;
+                    }
+                }
+
+                span:nth-of-type(2) {
+
+                    display: inline-block;
+                    margin: 0 5px;
+                    width: 70px;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #e5d790;
+                    border-radius: 13px;
+                    background: #363634;
+                    -webkit-transition: background .3s ease, color .3s ease;
+                    transition: background .3s ease, color .3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #e1251b;
+                        color: #fff;
+                    }
+                }
+            }
+
+
+        }
+    }
+
 }

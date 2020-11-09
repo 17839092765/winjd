@@ -113,14 +113,16 @@ $(function () {
                     password: input.eq(2).val()
                 },
                 success: function (res) {
+
                     console.log(res);
+                    alert(res.msg)
                 }
             })
 
 
 
             // console.log('注册成功');
-            // alert("注册成功")
+
         } else {
             alert("请重试")
         }

@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signIn {
+    #header {
+        width: 990px;
+        height: 100px;
+        margin: 0 auto;
+
+        .left {
+            width: 300px;
+            height: 60px;
+            padding: 10px;
+            float: left;
+            line-height: 60px;
+
+            a {
+                display: inline-block;
+                width: 170px;
+                height: 100px;
+                // line-height: 50px;
+
+            }
+
+            span {
+                width: 110px;
+                height: 40px;
+                display: inline-block;
+                // height: 120px;
+                // margin-left: 10px;
+                // font-size: 30px;
+                background: url(../images/下载.png);
+                // line-height: 50px;
+            }
+        }
+
+        .right {
+            width: 136PX;
+            height: 60px;
+            padding-top: 40px;
+            float: right;
+
+            a {
+                line-height: 50px;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    #main {
+        width: 990px;
+        height: 475px;
+        margin: 0 auto;
+        background: url(../images/f18c82cd0e4bbf54.png);
+        position: relative;
+
+        .titletop {
+            width: 345px;
+            height: 40px;
+            font-size: 12px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            line-height: 40px;
+            background: #fff8f0;
+            text-align: center;
+        }
+
+        .loginbox {
+            width: 345px;
+            height: 320px;
+            background: #fff;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+
+            p:nth-of-type(1) {
+                width: 100%;
+                height: 55px;
+                text-align: center;
+                background: rgb(255, 255, 255);
+                line-height: 55px;
+                color: #e4393c;
+                border-bottom: 1px solid #cecece;
+            }
+
+            p:nth-of-type(2) {
+                text-align: center;
+                width: 90%;
+                height: 38px;
+                border: 1px solid #cecece;
+                margin: 0 auto;
+                position: relative;
+                margin-bottom: 30px;
+                margin-top: 20px;
+
+                span {
+                    display: inline-block;
+                    width: 50px;
+                    height: 38px;
+                    position: absolute;
+                    z-index: 3;
+                    top: 0;
+                    left: 0;
+                    width: 38px;
+                    height: 38px;
+                    border-right: 1px solid #bdbdbd;
+                    background: url(//misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2018-0827/i/pwd-icons-new.png) no-repeat;
+                }
+
+                input {
+                    border: none;
+                    height: 38px;
+                    width: 80%;
+                    margin-left: 38px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: #ddd;
+                    }
+                }
+            }
+
+
+
+            p:nth-of-type(3) {
+                text-align: center;
+                width: 90%;
+                height: 38px;
+                border: 1px solid #cecece;
+                margin: 0 auto;
+                position: relative;
+
+                span {
+                    display: inline-block;
+                    width: 50px;
+                    height: 38px;
+                    position: absolute;
+                    z-index: 3;
+                    top: 0;
+                    left: 0;
+                    width: 38px;
+                    height: 38px;
+                    border-right: 1px solid #bdbdbd;
+                    background: url(//misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2018-0827/i/pwd-icons-new.png) no-repeat;
+                    background-position: -48px 0;
+                }
+
+                input {
+                    border: none;
+                    height: 38px;
+                    width: 80%;
+                    margin-left: 38px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: #ddd;
+                    }
+                }
+            }
+
+
+            p:nth-of-type(4) {
+                text-align: center;
+                margin-top: 60px;
+
+                input {
+                    width: 90%;
+                    height: 40px;
+                    outline: none;
+                    color: #fff;
+                    background: #e4393c;
+                }
+            }
+        }
+    }
+
+}

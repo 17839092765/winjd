@@ -6,59 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录页面</title>
     <script src="../js/jquery.js"></script>
-    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="../css/signIn.css">
+
+    <!-- <script>
+        $.cookie('username', '$("#username").val()', {
+            expires: 7
+        });
+    </script> -->
 </head>
 
 <body>
-    <header id="header">
-        <div class="left">
-            <a href="">
-                <h1></h1>
-            </a>
-        </div>
-        <div class="right">
-            <span>已有账号?</span>
-            <a href="">请登录</a>
-        </div>
+    <div class="signIn">
 
-    </header>
 
-    <main id="main">
-        <div class="top">
-            <div class="one tijiao">
-                <div class="tu">1</div>
-                <p>填写信息</p>
+
+
+        <header id="header">
+            <div class="left">
+                <a href="../index.html">
+                    <h1><img src="../images/logo-201305-b.png" alt=""></h1>
+                </a>
+                <span></span>
             </div>
-            <div class="lianjie">
-                ----->
+            <div class="right">
+                <span></span>
+                <a href="">登录页面，调查问卷?</a>
             </div>
-            <div class="one callback">
-                <div class="tu">2</div>
-                <p>注册成功</p>
+
+        </header>
+
+        <main id="main">
+            <div class="titletop">
+                <span>京东不会以任何理由要求您转账汇款，谨防诈骗。</span>
             </div>
-        </div>
-        <div class="zhuce">
-            <div id="from">
+            <div class="loginbox">
+                <p>账户登录</p>
+                <p><span></span> <input type="text" name="" placeholder="邮箱/用户名/登录手机" id="username"></p>
+                <p><span></span> <input type="password" name="" placeholder="密码" id="pasw"></p>
+                <p><input type="button" value="登录" id="btn"></p>
 
-
-                <p> 用&nbsp;&nbsp;户&nbsp;&nbsp;名:<input type="text" placeholder="您的账户名和登录名" name="" id="">
-                    <span><i></i> 支持中文、英文、数字、“-”、“_”的组合，4-20个字符</span>
-
-                </p>
-                <p> 设置密码:<input type="password" placeholder="建议使用两种或两种以上字符组合" name="" id="">
-                    <span><i></i> 建议使用两种或两种以上字符组合</span>
-                </p>
-                <p> 确认密码:<input type="password" placeholder="请再次输入密码" name="" id="">
-                    <span><i></i>请再次输入密码 </span>
-                </p>
-                <input type="button" value="立即注册">
             </div>
-        </div>
 
 
-    </main>
+        </main>
 
-    <script src="../js/login.js"></script>
+        <script src="../js/signIn.js"></script>
+    </div>
+
 </body>
 
 </html>
