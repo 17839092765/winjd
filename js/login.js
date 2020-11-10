@@ -27,36 +27,72 @@ $(function () {
     var flge3 = false
     input.eq(0).on("change ", function () {
         console.log($(this).val());
-        $.ajax({
-            url: 'http://jx.xuzhixiang.top/ap/api/checkname.php',
-            type: 'get',
-            data: {
-                username: $(this).val(),
-            },
-            success: (res) => {
-                console.log(res);
-                console.log($(this).parent().children("span"));
-                if (res.code == 1) {
-                    flge1 = true
-                } else {
-                    flge1 = false
-                }
 
-                if ($(this).val() != '') {
-                    $(this).parent().append("<b></b>").find("b").html(res.msg).css({
-                        position: 'absolute',
-                        top: '0',
-                        left: '80%',
-                    })
-                }
-                if ($(this).val() == "") {
-                    $(this).parent().find("b").html("")
-                    return;
-                }
+        axios.get(`http://localhost:3000/users?name=${$(this).val()}`, {
+
+        }).then(res => {
+            console.log(res);
+            let msg = ''
+            if (res.data.length == 0) {
+                flge1 = true
+                msg = "用户名可用"
+            } else {
+                flge1 = false
+                msg = "用户名已存在"
+            }
+
+            if ($(this).val() != '') {
+                $(this).parent().append("<b></b>").find("b").html(msg).css({
+                    position: 'absolute',
+                    top: '0',
+                    left: '80%',
+                })
+            }
+            if ($(this).val() == "") {
+                $(this).parent().find("b").html("")
+                return;
             }
         })
 
+
+
     })
+
+    // $.ajax({
+
+
+
+
+
+    //     url: 'http://jx.xuzhixiang.top/ap/api/checkname.php',
+    //     type: 'get',
+    //     data: {
+    //         username: $(this).val(),
+    //     },
+    //     success: (res) => {
+    //         console.log(res);
+    //         console.log($(this).parent().children("span"));
+    //         if (res.code == 1) {
+    //             flge1 = true
+    //         } else {
+    //             flge1 = false
+    //         }
+
+    //         if ($(this).val() != '') {
+    //             $(this).parent().append("<b></b>").find("b").html(res.msg).css({
+    //                 position: 'absolute',
+    //                 top: '0',
+    //                 left: '80%',
+    //             })
+    //         }
+    //         if ($(this).val() == "") {
+    //             $(this).parent().find("b").html("")
+    //             return;
+    //         }
+    //     }
+    // })
+
+
     var pasd = /^[a-z0-9_-]{6,18}$/
     input.eq(1).on("input", function () {
         if (!pasd.test($(this).val())) {
@@ -101,23 +137,55 @@ $(function () {
     })
 
     $("#from>input").on("click", function () {
+        axios.get(`http://localhost:3000/users?name=${input.eq(0).val()}`, {
+
+        }).then(res => {
+            console.log(res);
+
+            if (res.data.length == 0) {
+                flge1 = true
+
+            } else {
+                flge1 = false
+
+            }
+
+
+        })
 
         if (flge1 + flge2 + flge3 == 3) {
 
-            $.ajax({
-                url: 'http://jx.xuzhixiang.top/ap/api/reg.php',
-                type: 'get',
 
-                data: {
-                    username: input.eq(0).val(),
-                    password: input.eq(2).val()
-                },
-                success: function (res) {
+            //新增
+            axios.post("http://localhost:3000/users", {
+                name: input.eq(0).val(),
 
-                    console.log(res);
-                    alert(res.msg)
-                }
+                password: input.eq(2).val()
+
+
+                // uid:""
+            }).then(res => {
+                console.log(res);
+                alert("注册成功")
+                var url = '../index.html'
+                $(location).attr('href', url);
             })
+
+
+            // $.ajax({
+            //     url: 'http://jx.xuzhixiang.top/ap/api/reg.php',
+            //     type: 'get',
+
+            //     data: {
+            //         username: input.eq(0).val(),
+            //         password: input.eq(2).val()
+            //     },
+            //     success: function (res) {
+
+            //         console.log(res);
+            //         alert(res.msg)
+            //     }
+            // })
 
 
 

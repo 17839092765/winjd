@@ -1143,7 +1143,6 @@ li:nth-of-type(8):hover {
 
 
 .miaoshawrap {
-    background: rgb(152, 109, 109);
     z-index: 20;
 }
 
@@ -1163,6 +1162,7 @@ li:nth-of-type(8):hover {
         box-sizing: border-box;
         left: 1000px;
         // border: 1px solid #000;
+        background: #fff;
 
         .swiper-container4 {
             width: 160px;
@@ -1267,6 +1267,7 @@ li:nth-of-type(8):hover {
         position: absolute;
         top: 0;
         left: 200px;
+        background: #fff;
 
         .swiper-container3 {
             width: 100%;
@@ -1448,6 +1449,7 @@ li:nth-of-type(8):hover {
     .shengdianaaa {
         width: 1270px;
         height: 590px;
+
         padding: 146px 0 0;
         background: url(../images/ddb2c78980f17f5f.jpgcc_1270x590.webp) no-repeat;
         box-sizing: border-box;

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../css/global.css"> -->
+    <!-- <script src="../js/jquery.cookie.js"></script> -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/axios.min.js"></script>
+</head>
+<!-- 
+
+    //获取所有用户信息
+http://localhost:3000/users
+//获取id为1的用户信息
+http://localhost:3000/users/1
+//获取公司的所有信息
+http://localhost:3000/companies
+//获取单个公司的信息
+http://localhost:3000/companies/1
+//获取所有公司id为3的用户
+http://localhost:3000/companies/3/users
+//根据公司名字获取信息
+http://localhost:3000/companies?name=Google
+//根据多个名字获取公司信息
+http://localhost:3000/companies?name=Google&name=Apple
+//获取一页中只有两条数据
+http://localhost:3000/companies?_page=1&_limit=2
+//升序排序  desc降序  asc升序
+http://localhost:3000/companies?_sort=name&_order=asc
+//获取年龄为30以及30以上的
+http://localhost:3000/users?age_gte=30
+//获取年龄为30到40之间的
+http://localhost:3000/users?age_gte=30&age_gte=40
+//搜索用户信息
+http://localhost:3000/users?q=d
+ -->
+
+<body>
+
+    <input type="text" name="" id="btn">
+    <script>
+        $(function () {
+
+            $("#btn").on("input", function () {
+                console.log($("#btn").val());
+
+                axios.get(`http://localhost:3000/users?name=${btn.value}`, {
+
+                }).then(res => {
+                    var code = 0
+                    console.log(res);
+                    if (res.data.length == 1) {
+                        code = 1
+
+                    }
+
+                })
+            })
+
+
+        })
+
+
+
+        // axios.get('http://localhost:3000/users').then(res => {
+        //     console.log(res.data);
+        // })
+        // 查
+        axios.get(`http://localhost:3000/users?name=${btn.value}`, {
+
+        }).then(res => {
+            console.log(res);
+        })
+        //新增
+        // axios.post("http://localhost:3000/users", {
+        //     name: "aaa",
+        //     phone: 40000022222,
+        //     passwprd: '123456',
+        //     email: "1341308180@qq.com",
+        //     age: '20',
+
+        //     // uid:""
+        // }).then(res => {
+        //     console.log(res);
+        // })
+
+
+        // 登录
+        // axios.get('http://jx.xuzhixiang.top/ap/api/login.php', {
+        //     username: 'a',
+        //     password: 'a'
+        // }).then(res => {
+        //     console.log(res);
+        // })
+    </script>
+</body>
+
+</html>
