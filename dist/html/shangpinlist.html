@@ -41,7 +41,14 @@ http://localhost:3000/users?q=d
 <body>
 
     <input type="text" name="" id="btn">
-    <script>
+    <script type="module">
+        var uuid = require('node-uuid');
+        var uid = uuid.v1();
+var uidv4 = uuid.v4();
+
+        // import uuid from '/node-uuid';
+        // console.log(uuid.v1());
+        // console.log(uuid.v4());
         $(function () {
 
             $("#btn").on("input", function () {
@@ -63,7 +70,7 @@ http://localhost:3000/users?q=d
 
         })
 
-
+        
 
         // axios.get('http://localhost:3000/users').then(res => {
         //     console.log(res.data);
@@ -73,20 +80,28 @@ http://localhost:3000/users?q=d
 
         }).then(res => {
             console.log(res);
+
         })
         //新增
-        // axios.post("http://localhost:3000/users", {
-        //     name: "aaa",
-        //     phone: 40000022222,
-        //     passwprd: '123456',
-        //     email: "1341308180@qq.com",
-        //     age: '20',
-
-        //     // uid:""
+        axios.post("http://localhost:3000/users", {
+            name: "aaa",
+            phone: 40000022222,
+            passwprd: '123456',
+            email: "1341308180@qq.com",
+            age: '20',
+            uid: uuid.v1()
+            // uid:""
+        }).then(res => {
+            console.log(res);
+        })
+        // axios.post("http://localhost:3000/products", {
+        //     title: "商品1",
+        //     price: 400,
+        //     imgsrc: "img/4.jpg",
+        //     desc: "lalaal"
         // }).then(res => {
         //     console.log(res);
         // })
-
 
         // 登录
         // axios.get('http://jx.xuzhixiang.top/ap/api/login.php', {
@@ -96,6 +111,8 @@ http://localhost:3000/users?q=d
         //     console.log(res);
         // })
     </script>
+    <script src="../js/reaaaa.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,12 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const connect = require("gulp-connect");
 const sourcemaps = require("gulp-sourcemaps");
+var uuid = require('node-uuid');
 
+gulp.task("uid", done => {
+    console.log(uuid.v1());
+    done()
+})
 gulp.task("html", done => {
     gulp.src("*.html")
         .pipe(gulp.dest("dist"))
