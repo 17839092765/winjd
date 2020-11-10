@@ -458,6 +458,43 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
 
 
+        // 调入数据         
+        // $("#showdata")
+
+        let url = `http://localhost:3000/products`
+        let uid = localStorage.getItem('id');
+        axios.get(url, {
+
+            params: {
+                pagesize: 10,
+                pagenum: 0, //商品数据是从0页开始
+                uid //查看当前登录账号的 商品
+            }
+        }).then((res) => {
+            // console.log(res.data);
+            //  商品数据 【{},{}】-> tr td
+            // {pid: "260799", pname: "555", pprice: "55555.00", pimg: "000", pdesc: "555", …}
+            let arr = res.data;
+            let html = "";
+
+
+            arr.forEach((v) => {
+                // console.log(v.params);
+                html += `
+                    <li>
+                    <img src="${v.params.pimg}" alt="">
+                    <p>${v.params.pdesc}</p>
+                    <p>¥${v.params.pprice}</p>
+                    </li>
+                    
+                 `;
+            });
+            $("#showdata").html(html)
+
+        })
+
+
+
 
 
     })

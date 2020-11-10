@@ -6,7 +6,8 @@ $b:#c81623;
 #header,
 #main,
 #miaosha,
-#shengdian {
+#shengdian,
+#weinituijian {
     width: 1190px;
     margin: 0 auto;
     // border: 1px solid #cecece;
@@ -1525,4 +1526,98 @@ li:nth-of-type(8):hover {
 
     }
 
+}
+
+#weinituijian {
+    margin-top: 20px;
+    min-height: 1000px;
+    border: 1px solid #cecece;
+
+    >h3 {
+        font-weight: 900px;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .tuitop {
+        width: 100%;
+        height: 60px;
+        background: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        >div {
+            text-align: center;
+            width: 180px;
+            height: 50px;
+            float: left;
+            border-radius: 30px;
+            border: 1px solid #cecece;
+
+            &:hover {
+                background: red;
+                color: #FFF;
+            }
+
+            >p:nth-of-type(1) {
+                width: 100px;
+                height: 30px;
+                // border: 1px solid #cecece;
+                line-height: 30px;
+                margin: 0 auto;
+            }
+
+            >p:nth-of-type(2) {
+                width: 100px;
+                height: 20px;
+                font-size: 12px;
+                // border: 1px solid #cecece;
+                margin: 0 auto;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .show {
+        #showdata {
+            li {
+                float: left;
+                width: 227px;
+                height: 320px;
+                background: rgb(184, 164, 164);
+                margin: 5px;
+
+                p:nth-of-type(1) {
+                    width: 200px;
+                    height: 50px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #2e0707;
+                    margin-left: 10px;
+                    line-height: 50px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                p:nth-of-type(2) {
+                    width: 200px;
+                    height: 50px;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #ce1313;
+                    margin-left: 10px;
+                    line-height: 50px;
+                }
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    margin: 10px auto;
+
+                }
+            }
+        }
+    }
 }
