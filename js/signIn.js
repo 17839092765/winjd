@@ -39,7 +39,14 @@ $(function () {
                         $.cookie('username', $("#username").val(), {
                             expires: 7,
                             path: '/',
-                            domain: '127.0.0.1'
+                            domain: '127.0.0.1',
+                            // domain: 'localhost'
+                        });
+                        $.cookie('username', $("#username").val(), {
+                            expires: 7,
+                            path: '/',
+                            // domain: '127.0.0.1',
+                            domain: 'localhost'
                         });
                         var url = '../index.html'
                         $(location).attr('href', url);

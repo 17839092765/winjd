@@ -283,7 +283,7 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
         // lunbotu
 
-        var mySwiper = new Swiper('.swiper-container', {
+        var mySwiper1 = new Swiper('.swiper-container1', {
             direction: 'horizontal', // 垂直切换选项
             loop: true, // 循环模式选项
             autoplay: true,
@@ -308,32 +308,105 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
             // },
         })
 
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+            autoplay: true,
+
+
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+                // hideOnClick: true,
+                // hiddenClass: 'my-button-hidden',
+            },
+
+            // 如果需要滚动条
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
+
+        // 秒杀下的轮播
+        var swiper3 = new Swiper('.swiper-container3', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            slidesPerGroup: 4,
+            // autoplay: true,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+
+        var mySwiper4 = new Swiper('.swiper-container4', {
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+            autoplay: true,
+
+
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // 如果需要前进后退按钮
+            // navigation: {
+            //     prevEl: '.swiper-button-prev',
+            //     nextEl: '.swiper-button-next',
+            //     // hideOnClick: true,
+            //     // hiddenClass: 'my-button-hidden',
+            // },
+
+            // 如果需要滚动条
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
+
+
+
+        //----------------------------
+
         //鼠标覆盖停止自动切换
-        mySwiper[0].el.onmouseover = function () {
-            mySwiper[0].autoplay.stop();
-            mySwiper[0].navigation.$nextEl.removeClass('hide');
-            mySwiper[0].navigation.$prevEl.removeClass('hide');
+        mySwiper1.el.onmouseover = function () {
+            mySwiper1.autoplay.stop();
+            mySwiper1.navigation.$nextEl.removeClass('hide');
+            mySwiper1.navigation.$prevEl.removeClass('hide');
         }
 
         //鼠标离开开始自动切换
-        mySwiper[0].el.onmouseout = function () {
-            mySwiper[0].autoplay.start();
-            mySwiper[0].navigation.$nextEl.addClass('hide');
-            mySwiper[0].navigation.$prevEl.addClass('hide');
+        mySwiper1.el.onmouseout = function () {
+            mySwiper1.autoplay.start();
+            mySwiper1.navigation.$nextEl.addClass('hide');
+            mySwiper1.navigation.$prevEl.addClass('hide');
 
         }
         //鼠标覆盖停止自动切换
-        mySwiper[1].el.onmouseover = function () {
-            mySwiper[1].autoplay.stop();
-            mySwiper[1].navigation.$nextEl.removeClass('hide');
-            mySwiper[1].navigation.$prevEl.removeClass('hide');
+        mySwiper2.el.onmouseover = function () {
+            mySwiper2.autoplay.stop();
+            mySwiper2.navigation.$nextEl.removeClass('hide');
+            mySwiper2.navigation.$prevEl.removeClass('hide');
         }
 
         //鼠标离开开始自动切换
-        mySwiper[1].el.onmouseout = function () {
-            mySwiper[1].autoplay.start();
-            mySwiper[1].navigation.$nextEl.addClass('hide');
-            mySwiper[1].navigation.$prevEl.addClass('hide');
+        mySwiper2.el.onmouseout = function () {
+            mySwiper2.autoplay.start();
+            mySwiper2.navigation.$nextEl.addClass('hide');
+            mySwiper2.navigation.$prevEl.addClass('hide');
 
         }
         //鼠标移出隐藏按钮，移入显示按钮
@@ -361,6 +434,25 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
             })
         })
+
+
+
+
+        //鼠标覆盖停止自动切换
+        swiper3.el.onmouseover = function () {
+            swiper3.autoplay.stop();
+            swiper3.navigation.$nextEl.removeClass('hide');
+            swiper3.navigation.$prevEl.removeClass('hide');
+        }
+
+        //鼠标离开开始自动切换
+        swiper3.el.onmouseout = function () {
+            swiper3.autoplay.start();
+            swiper3.navigation.$nextEl.addClass('hide');
+            swiper3.navigation.$prevEl.addClass('hide');
+
+        }
+
 
 
 
