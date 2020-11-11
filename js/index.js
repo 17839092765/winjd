@@ -110,6 +110,21 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
                 path: '/',
                 domain: '127.0.0.1'
             });
+            $.removeCookie('uid', {
+                expires: 7,
+                path: '/',
+                domain: '127.0.0.1'
+            });
+            $.removeCookie('username', $("#username").val(), {
+                expires: 7,
+                path: '/',
+                domain: 'localhost'
+            });
+            $.removeCookie('uid', {
+                expires: 7,
+                path: '/',
+                domain: 'localhost'
+            });
             window.location.reload()
         })
 
@@ -454,7 +469,7 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
         }
 
 
-
+        // --------------------------------------------------------------------
 
 
 
@@ -462,13 +477,12 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
         // $("#showdata")
 
         let url = `http://localhost:3000/products`
-        let uid = localStorage.getItem('id');
         axios.get(url, {
 
             params: {
-                pagesize: 10,
-                pagenum: 0, //商品数据是从0页开始
-                uid //查看当前登录账号的 商品
+                // pagesize: 10,
+                // pagenum: 0, //商品数据是从0页开始
+                //uid //查看当前登录账号的 商品
             }
         }).then((res) => {
             // console.log(res.data);
@@ -476,13 +490,18 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
             // {pid: "260799", pname: "555", pprice: "55555.00", pimg: "000", pdesc: "555", …}
             let arr = res.data;
             let html = "";
+            // console.log(arr.length);
+
+            let myarr = arr.slice(0, 20)
+            // console.log(myarr.length);
 
 
-            arr.forEach((v) => {
+            myarr.forEach((v) => {
                 // console.log(v.params);
                 html += `
-                    <li>
-                    <img src="${v.params.pimg}" alt="">
+                    <li data-id="${v.id}">
+                    <a href="html/shangpinlist.html?id=${v.id}">
+                    <img src="${v.params.pimg}" alt=""></a>
                     <p>${v.params.pdesc}</p>
                     <p>¥${v.params.pprice}</p>
                     </li>
@@ -490,10 +509,53 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
                  `;
             });
             $("#showdata").html(html)
+            var index = 20
+
+
+            $("#datamore").click(function () {
+                // console.log(index);
+                if (index <= 300) {
+
+                    // console.log(arr);
+                    // console.log(myarr);
+
+                    // console.log(index);
+                    myarr = arr.slice(index, index + 5)
+
+                    // console.log(myarr);
+
+
+                    myarr.forEach((v) => {
+                        console.log(v.id);
+                        html += `
+                            <li data-id="${v.id}">
+                            <a href="html/shangpinlist.html?id=${v.id}">
+                            <img src="${v.params.pimg}" alt=""></a>
+                            <p>${v.params.pdesc}</p>
+                            <p>¥${v.params.pprice}</p>
+                            </li>
+                         `;
+
+                    });
+
+                    $("#showdata").html(html)
+                    index += 5
+                    // console.log(index);
+
+
+                }
+
+            })
 
         })
 
 
+        // --------------------------------------------------------
+
+
+
+        // 斤详情页面
+        $('.show #showdata li').children('a')
 
 
 

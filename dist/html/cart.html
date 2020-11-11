@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+    <div id="cartshow">
+        <div class="cartcase">
+            <div class="img">
+                <img src="" alt="">
+            </div>
+            <div class="title">
+                <p></p>
+            </div>
+            <div class="price">
+                <p></p>
+            </div>
+            <div class="num">
+                <span>-</span>
+                <input type="text">
+                <span>+</span>
+            </div>
+            <div class="xiaoji">
+                <p></p>
+            </div>
+            <div class="del">
+                <p>删除</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(function () {
+
+
+            let uid = $.cookie("uid")
+            console.log(uid);
+            if (uid) {
+                axios.get(`http://localhost:3000/cart?uid=${uid}`).then(res => {
+                    console.log(res.data);
+                    let arr = res.data
+                    var str = ""
+
+                    arr.forEach(item => {
+                        console.log(item.carts.num);
+                        axios.get(`http://localhost:3000/products?id=${item.carts.id}`).then((
+                            res1) => {
+
+                            console.log(res1.data[0].params);
+                            // console.log(str);
+
+                            str += `
+                            <div class="cartcase">
+                                <div class="img">
+                                    <img src="${res1.data[0].params.pimg}" alt="">
+                                </div>
+                                <div class="title">
+                                    <p>${res1.data[0].params.pdesc}</p>
+                                </div>
+                                <div class="price">
+                                    <p>${res1.data[0].params.pprice}</p>
+                                </div>
+                                <div class="num">
+                                    <span class="jian">-</span>
+                                    <input type="text" value="${item.carts.num}">
+                                    <span class="jia">+</span>
+                                </div>
+                                <div class="xiaoji">
+                                    <p></p>
+                                </div>
+                                <div class="del">
+                                    <p>删除</p>
+                                </div>
+                                 </div>
+                                `
+
+
+                            $("#cartshow").html(str)
+
+
+                            $(".jian").click(() => {
+                                console.log($(this).parent().find("input")
+                                .val());
+
+                                console.log(item);
+                                console.log(item.carts.num);
+                                console.log("asdjasfhjdsfhjsdg");
+                                // axios.patch(
+                                //     `http://localhost:3000/cart/${item.carts.num}`, {
+                                //         carts: {
+                                //             id: dataid,
+                                //             num: numup
+                                //         },
+                                //         num: numup
+                                //     }
+                                // )
+
+                            })
+                        })
+
+
+
+
+                    });
+                    // $(".cartcase").html(str)
+
+                    // console.log(str);
+                })
+            }
+
+
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

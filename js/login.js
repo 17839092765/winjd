@@ -1,5 +1,26 @@
 console.log($("#from p"));
 
+function f01() {
+    var a = "";
+    while (a.length < 7) {
+
+        //数字 48-57  大写字母65-90  65-70  小写字母 97-122
+        var charcode = (Math.floor(Math.random() * 17) + 48);
+
+        if (charcode >= 48 && charcode <= 57 || charcode >= 65 && charcode <= 70) {
+            var add = String.fromCharCode(charcode)
+
+            a += add
+        }
+
+    }
+    console.log(a);
+
+    return a
+
+}
+
+console.log(Number(f01()));
 $(function () {
     var input = $("#from p ").children("input")
     // input获取焦点时提示信息显示
@@ -160,8 +181,8 @@ $(function () {
             axios.post("http://localhost:3000/users", {
                 name: input.eq(0).val(),
 
-                password: input.eq(2).val()
-
+                password: input.eq(2).val(),
+                uid: Number(f01()),
 
                 // uid:""
             }).then(res => {
@@ -194,6 +215,10 @@ $(function () {
         } else {
             alert("请重试")
         }
+
+
+
+
     })
 
 

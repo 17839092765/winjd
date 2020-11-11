@@ -28,7 +28,8 @@ $(function () {
 
             }).then(res => {
                 console.log(res);
-                console.log(res.data.length);
+                console.log(res.data);
+                console.log(res.data[0].uid);
                 if (res.data.length != 0) {
                     alert("登录成功")
 
@@ -39,6 +40,19 @@ $(function () {
                 }
 
                 if (flag) {
+                    res.data[0].uid
+                    $.cookie('uid', res.data[0].uid, {
+                        expires: 7,
+                        path: '/',
+                        domain: '127.0.0.1',
+                        // domain: 'localhost'
+                    });
+                    $.cookie('uid', res.data[0].uid, {
+                        expires: 7,
+                        path: '/',
+                        domain: 'localhost',
+                        // domain: 'localhost'
+                    });
                     $.cookie('username', $("#username").val(), {
                         expires: 7,
                         path: '/',

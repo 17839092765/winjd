@@ -1,0 +1,49 @@
+#cartshow {
+    width: 990px;
+    min-height: 200px;
+    background: rgb(228, 224, 20);
+    margin: 0 auto;
+
+    .cartcase {
+        width: 990px;
+        margin: 10px auto;
+        height: 200px;
+        background: rgb(70, 147, 153);
+
+
+        >div {
+            float: left;
+            border: 1px solid #cecece;
+            height: 180px;
+            margin: 5px;
+        }
+
+        .img {
+            height: 180px;
+            width: 180px;
+        }
+
+        .title {
+            width: 200px;
+            height: 100px;
+        }
+
+        .price {
+            width: 190px;
+
+        }
+
+        .num {
+            width: 100px;
+        }
+
+        .xiaoji {
+            width: 140px;
+
+        }
+
+        .del {
+            width: 75px;
+        }
+    }
+}
