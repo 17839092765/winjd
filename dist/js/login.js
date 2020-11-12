@@ -146,7 +146,7 @@ $(function () {
             })
             flge3 = false
         } else {
-            $(this).parent().append("<b></b>").find("b").html("√").css({
+            $(this).parent().append("<b></b>").find("b").html("一致").css({
                 position: 'absolute',
                 top: '0',
                 left: '80%',
@@ -188,7 +188,7 @@ $(function () {
             }).then(res => {
                 console.log(res);
                 alert("注册成功")
-                var url = '../index.html'
+                var url = 'signIn.html'
                 $(location).attr('href', url);
             })
 

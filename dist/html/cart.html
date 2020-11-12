@@ -21,7 +21,7 @@
             <div class="xiaoji">小计</div>
             <div class="caozuo">操作</div>
         </div>
-        <div class="cartcase">
+        <!-- <div class="cartcase">
             <div class="img">
                 <img src="" alt="">
             </div>
@@ -42,7 +42,7 @@
             <div class="del">
                 <p>删除</p>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
@@ -124,7 +124,7 @@
 
                                 let aaa = +$(this).parent().find("input")
                                     .val() - 1
-                                if (aaa < 0) {
+                                if (aaa < 1) {
                                     return
                                 }
                                 $(this).parent().find("input")
