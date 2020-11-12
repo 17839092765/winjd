@@ -12,6 +12,8 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
             })
         })
         var username = $.cookie("username")
+        // var cartnum = $.cookie("cartnum")
+        var uid = $.cookie("uid")
         console.log($.cookie("username"));
         // $.getUrlParam = function (name) {
         //     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -25,6 +27,12 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
         // }
         if (username) {
+            axios.get(`http://localhost:3000/cart?uid=${uid}`).then((res) => {
+
+                $('#shopping-amount').text(res.data.length)
+
+            })
+
             $(".right").children("li").eq(0).html(`<a href=''>${username}<span class='iconfont iconsanjiao'></span></a> <div class="mydata">
             <a href=''> <p></p></a>
             <input type="button" value="注销">
@@ -299,6 +307,7 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
         // lunbotu
 
         var mySwiper1 = new Swiper('.swiper-container1', {
+            effect: 'fade',
             direction: 'horizontal', // 垂直切换选项
             loop: true, // 循环模式选项
             autoplay: true,
@@ -324,6 +333,7 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
         })
 
         var mySwiper2 = new Swiper('.swiper-container2', {
+            effect: 'fade',
             direction: 'horizontal', // 垂直切换选项
             loop: true, // 循环模式选项
             autoplay: true,
@@ -350,6 +360,7 @@ https: //suggest.taobao.com/sug?code=utf-8&q=${oInput.value}&_ksTS=1603364053268
 
         // 秒杀下的轮播
         var swiper3 = new Swiper('.swiper-container3', {
+            // effect: 'fade',
             slidesPerView: 4,
             spaceBetween: 30,
             slidesPerGroup: 4,

@@ -1,8 +1,57 @@
+body {
+    background: #ddd;
+}
+
 #cartshow {
     width: 990px;
     min-height: 200px;
     background: rgb(228, 224, 20);
     margin: 0 auto;
+
+    .top {
+        width: 990px;
+        height: 60px;
+        border: 1px solid #cecece;
+        background: #fff;
+        margin-top: 20px;
+
+        >div {
+            float: left;
+            border: 1px solid #cecece;
+            box-sizing: border-box;
+            margin: 5px;
+        }
+
+        .one {
+            width: 390px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .danjia {
+            width: 190px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .shuliang {
+            width: 105px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .xiaoji {
+            width: 140px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .caozuo {
+            width: 75px;
+            height: 50px;
+            text-align: center;
+        }
+    }
 
     .cartcase {
         width: 990px;
@@ -13,19 +62,24 @@
 
         >div {
             float: left;
-            border: 1px solid #cecece;
             height: 180px;
+            border: 1px solid #cecece;
             margin: 5px;
         }
 
         .img {
             height: 180px;
             width: 180px;
+
+            img {
+                margin: 10px auto;
+            }
         }
 
         .title {
             width: 200px;
-            height: 100px;
+            height: 180px;
+            font-size: 20px;
         }
 
         .price {
@@ -35,6 +89,13 @@
 
         .num {
             width: 100px;
+
+            input {
+                width: 20px;
+                height: 20px;
+                font-size: 18px;
+                text-align: center;
+            }
         }
 
         .xiaoji {

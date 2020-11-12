@@ -26,7 +26,7 @@ function time(date) {
     }
 }
 
-var date1 = new Date("2020/11/11 17:08:50")
+var date1 = new Date("2020/11/12 17:08:50")
 time(date1);
 var timer = setInterval(function () {
     time(date1);

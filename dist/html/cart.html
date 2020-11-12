@@ -14,6 +14,13 @@
 
 <body>
     <div id="cartshow">
+        <div class="top">
+            <div class="one">商品</div>
+            <div class="danjia">单价</div>
+            <div class="shuliang">数量</div>
+            <div class="xiaoji">小计</div>
+            <div class="caozuo">操作</div>
+        </div>
         <div class="cartcase">
             <div class="img">
                 <img src="" alt="">
@@ -48,16 +55,34 @@
             console.log(uid);
             if (uid) {
                 axios.get(`http://localhost:3000/cart?uid=${uid}`).then(res => {
-                    console.log(res.data);
+                    console.log(res.data.length);
+                    $.cookie('cartnum', res.data.length, {
+                        expires: 7,
+                        path: '/',
+                        domain: '127.0.0.1',
+                        // domain: 'localhost'
+                    });
+                    $.cookie('cartnum', res.data.length, {
+                        expires: 7,
+                        path: '/',
+                        domain: 'localhost',
+                        // domain: 'localhost'
+                    });
                     let arr = res.data
-                    var str = ""
+                    var str = ` <div class="top">
+                        <div class="one">商品</div>
+            <div class="danjia">单价</div>
+            <div class="shuliang">数量</div>
+            <div class="xiaoji">小计</div>
+            <div class="caozuo">操作</div>
+                        </div>`
 
                     arr.forEach(item => {
-                        console.log(item.carts.num);
+                        console.log(item.carts.id);
                         axios.get(`http://localhost:3000/products?id=${item.carts.id}`).then((
                             res1) => {
 
-                            console.log(res1.data[0].params);
+                            // console.log(res1.data[0].params);
                             // console.log(str);
 
                             str += `
@@ -67,19 +92,21 @@
                                 </div>
                                 <div class="title">
                                     <p>${res1.data[0].params.pdesc}</p>
+                                    <p>${item.carts.id}</p>
+
                                 </div>
                                 <div class="price">
-                                    <p>${res1.data[0].params.pprice}</p>
+                                    <p data-id="${res1.data[0].params.pprice}">${res1.data[0].params.pprice}</p>
                                 </div>
                                 <div class="num">
                                     <span class="jian">-</span>
-                                    <input type="text" value="${item.carts.num}">
+                                    <input data-id="${item.id}" type="text" value="${item.num}">
                                     <span class="jia">+</span>
                                 </div>
                                 <div class="xiaoji">
-                                    <p></p>
+                                    <p>${(res1.data[0].params.pprice)*item.num}</p>
                                 </div>
-                                <div class="del">
+                                <div data-id="${item.id}" class="del">
                                     <p>删除</p>
                                 </div>
                                  </div>
@@ -89,13 +116,77 @@
                             $("#cartshow").html(str)
 
 
-                            $(".jian").click(() => {
-                                console.log($(this).parent().find("input")
-                                .val());
+                            $(".jian").click(function () {
+                                let myid = $(this).parent().find("input").attr(
+                                    "data-id")
+                                // console.log($(this).parent().find("input").attr(
+                                //     "data-id"));
 
-                                console.log(item);
-                                console.log(item.carts.num);
-                                console.log("asdjasfhjdsfhjsdg");
+                                let aaa = +$(this).parent().find("input")
+                                    .val() - 1
+                                if (aaa < 0) {
+                                    return
+                                }
+                                $(this).parent().find("input")
+                                    .val(aaa)
+                                let myprice = $(this).parent().parent().find(
+                                    ".price p").attr("data-id")
+                                console.log(myprice);
+                                axios.patch(
+                                    `http://localhost:3000/cart/${myid}`, {
+                                        price: myprice,
+
+                                        num: aaa
+                                    }
+                                ).then((() => {
+                                    console.log($(this));
+                                    $(this).parent().parent().find(
+                                        ".xiaoji p").html(
+                                        ($(this).parent()
+                                            .parent().find(
+                                                ".num").find(
+                                                "input").val()
+                                        ) *
+                                        myprice
+                                    )
+                                    // $(".xiaoji").children("p").html(
+                                    //     (myprice) * item.num)
+                                }))
+
+                            })
+
+                            $(".jia").click(function () {
+                                let myprice = $(this).parent().parent().find(
+                                    ".price p").attr("data-id")
+
+                                let myid = $(this).parent().find("input").attr(
+                                    "data-id")
+                                // console.log(+$(this).parent().find("input")
+                                //     .val() + 1);
+                                let aaa = +$(this).parent().find("input")
+                                    .val() + 1
+                                $(this).parent().find("input")
+                                    .val(aaa)
+
+                                axios.patch(
+                                    `http://localhost:3000/cart/${myid}`, {
+                                        price: myprice,
+                                        num: aaa
+                                    }
+                                ).then((() => {
+                                    console.log($(this));
+                                    $(this).parent().parent().find(
+                                        ".xiaoji p").html(
+                                        ($(this).parent()
+                                            .parent().find(
+                                                ".num").find(
+                                                "input").val()
+                                        ) *
+                                        myprice
+                                    )
+                                    // $(".xiaoji").children("p").html(
+                                    //     (myprice) * item.num)
+                                }))
                                 // axios.patch(
                                 //     `http://localhost:3000/cart/${item.carts.num}`, {
                                 //         carts: {
@@ -107,6 +198,27 @@
                                 // )
 
                             })
+
+
+
+                            // 删除功能
+                            $(".del").click(function () {
+                                let mydel = $(this).attr("data-id")
+                                console.log(mydel);
+                                //删除 restful风格
+                                axios.delete(
+                                        `http://localhost:3000/cart/${mydel}`)
+                                    .then(data => {
+                                        console.log(data);
+                                        $(this).parent().remove()
+
+                                    });
+
+                            })
+
+
+
+
                         })
 
 
